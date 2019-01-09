@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    var domains = ['iaym.ml', 'iaym.cf', 'n.iaym.ml'];
+    for (var dx in domains) {
+        if (host.indexOf(domains[dx]) >= 0) {
+            return true;
+        }
+    }
+    return false;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'http://n.iaym.ml';
+}
+        </script>
+</head>
+<body>
+    aym
+</body>
+</html>
